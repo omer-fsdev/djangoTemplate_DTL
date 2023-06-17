@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %} temp1 HTML {% endblock title %} 
+
+{% block content %}
+<h2>This content added on the temp1!</h2>
+{% endblock content %} 
+
+
+{% block content2 %}
+<p>{{ title }}</p>
+<p>{{ number }}</p>
+<p>{{ dict }}</p>
+<p>{{ is_exist }}</p>
+<p>{{ list }}</p>
+
+{% if is_exist %}
+<p>The if block: The boolean value is True.</p>
+{% else %}
+<p>else: The boolean value is False.</p>
+{% endif %}
+
+<p>The for block (ul):</p>
+<ul>
+  {% for i in list %}
+  <li>{{ i }}</li>
+  {% endfor %}
+</ul>
+
+<p>lowercase: {{ title|lower }}</p>
+<p>uppercase: {{ title|upper }}</p>
+
+<p>join: {{ list|join:' - ' }}</p>
+{% endblock content2 %}
